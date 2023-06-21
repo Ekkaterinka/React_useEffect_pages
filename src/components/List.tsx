@@ -17,9 +17,6 @@ export default function List() {
 
     }, [])
 
-    const formatId = id.toString
-
-console.log(data)
 
     return (
 
@@ -29,7 +26,7 @@ console.log(data)
                 </div>
                 )
             })}
-            <Details id={formatId} />
+            <Details id={id} />
         </div>
 
 

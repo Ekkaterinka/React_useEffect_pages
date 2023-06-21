@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 
 
-export default function Details(id: any) {
+export default function Details({id}: {id: number}) {
     const [user, setUser] = useState({avatar: '', name: '', details:{city:'', company: '', position: ''}})
 
     useEffect(() => {
@@ -9,7 +9,7 @@ export default function Details(id: any) {
         fetch(`https://raw.githubusercontent.com/netology-code/ra16-homeworks/master/hooks-context/use-effect/data/${id}.json`)
             .then(response => response.json())
             .then(data => setUser(data))
-    }, [])
+    }, [id])
     console.log(user)
 
     return (
